@@ -9,7 +9,7 @@ set -eu -o pipefail
 set -x
 cd "$(dirname "$(readlink -f "$0")")/.."
 
-cd depends/ && make HOST=$HOST V=1 NO_QT=1 && cd ../
+cd depends/ && make HOST=$HOST V=1 NO_QT=1 RUST_ARG="--enable-rust=no" && cd ../
 ./autogen.sh
 CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site CXXFLAGS+=" -fopenmp" ./configure --prefix="${PREFIX}" --host=x86_64-w64-mingw32 --enable-static --disable-shared --disable-zmq --disable-rust
 sed -i 's/-lboost_system-mt /-lboost_system-mt-s /' configure
