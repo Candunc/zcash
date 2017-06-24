@@ -1,4 +1,6 @@
-##Building Zcash for Windows
+Building Zcash for Windows
+==========================
+
 
 This guide has been tested for Debian Stretch, however it should work for Ubuntu and other variants of Debian.
 
@@ -14,7 +16,7 @@ This guide has been tested for Debian Stretch, however it should work for Ubuntu
 #### Building
 
 	git clone https://github.com/candunc/zcash.git
-	git checkout v1.0.8-win-cross
+	git checkout v1.0.10-1-win-cross
     ./zcutil/build-win.sh
 
 Now, in your ./src/ directory you should have zcashd.exe, zcash-cli.exe, and zcash-tx.exe.
